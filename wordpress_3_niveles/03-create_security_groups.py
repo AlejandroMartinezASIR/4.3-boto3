@@ -1,6 +1,6 @@
 import boto3
 
-# Load environment variables
+# Cargar variables de entorno
 import os
 from dotenv import load_dotenv
 
@@ -11,7 +11,7 @@ SECURITY_GROUP_BACKEND = os.getenv('SECURITY_GROUP_BACKEND')
 SECURITY_GROUP_NFS = os.getenv('SECURITY_GROUP_NFS')
 SECURITY_GROUP_BALANCEADOR = os.getenv('SECURITY_GROUP_BALANCEADOR')
 
-# Create EC2 client
+# Crear cliente de EC2
 ec2 = boto3.client('ec2')
 
 def create_security_group(group_name, description):

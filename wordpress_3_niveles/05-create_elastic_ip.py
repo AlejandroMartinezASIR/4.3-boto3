@@ -8,7 +8,7 @@ INSTANCE_NAME_FRONTEND = os.getenv('INSTANCE_NAME_FRONTEND')
 
 ec2 = boto3.client('ec2')
 
-# Describe instances to get the instance ID
+# Describe las instancias para obtener la ID de la instancia
 response = ec2.describe_instances(
     Filters=[
         {'Name': 'tag:Name', 'Values': [INSTANCE_NAME_FRONTEND]},
@@ -18,11 +18,11 @@ response = ec2.describe_instances(
 
 instance_id = response['Reservations'][0]['Instances'][0]['InstanceId']
 
-# Allocate Elastic IP
+# Asigna una nueva dirección IP elástica
 allocation = ec2.allocate_address(Domain='vpc')
 elastic_ip = allocation['PublicIp']
 
-# Associate Elastic IP with the instance
+# Asocia la dirección IP elástica con la instancia
 ec2.associate_address(InstanceId=instance_id, PublicIp=elastic_ip)
 
-print(f'Elastic IP {elastic_ip} associated with instance {instance_id}')
+print(f'Dirección IP elástica {elastic_ip} asociada con la instancia {instance_id}')
