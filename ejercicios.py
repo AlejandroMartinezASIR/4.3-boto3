@@ -33,7 +33,7 @@ print(f"Grupo de seguridad 'backend-sg' creado con ID: {security_group_id}")
 
 # Ejercicio 2: Crear una instancia EC2
 response = ec2.run_instances(
-    ImageId='ami-08e637cea2f053dfa',
+    ImageId='ami-04b4f1a9cf54c11d0',
     MinCount=1,
     MaxCount=1,
     InstanceType='t2.micro',
