@@ -4,14 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-INSTANCE_NAME_FRONTEND = os.getenv('INSTANCE_NAME_FRONTEND')
+INSTANCE_NAME_FRONTEND = os.getenv('INSTANCE_NAME_BALANCEADOR')
 
 ec2 = boto3.client('ec2')
 
 # Describe las instancias para obtener la ID de la instancia
 response = ec2.describe_instances(
     Filters=[
-        {'Name': 'tag:Name', 'Values': [INSTANCE_NAME_FRONTEND]},
+        {'Name': 'tag:Name', 'Values': [INSTANCE_NAME_BALANCEADOR]},
         {'Name': 'instance-state-name', 'Values': ['running']}
     ]
 )
