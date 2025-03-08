@@ -35,19 +35,21 @@ create_security_group(SECURITY_GROUP_FRONTEND, "Reglas para el frontend")
 authorize_ingress(SECURITY_GROUP_FRONTEND, 'tcp', 22, '0.0.0.0/0')
 authorize_ingress(SECURITY_GROUP_FRONTEND, 'tcp', 80, '0.0.0.0/0')
 authorize_ingress(SECURITY_GROUP_FRONTEND, 'tcp', 443, '0.0.0.0/0')
-
+print(f"Grupo de seguridad '{SECURITY_GROUP_FRONTEND}' creado")
 # Backend
 create_security_group(SECURITY_GROUP_BACKEND, "Reglas para el backend")
 authorize_ingress(SECURITY_GROUP_BACKEND, 'tcp', 22, '0.0.0.0/0')
 authorize_ingress(SECURITY_GROUP_BACKEND, 'tcp', 3306, '0.0.0.0/0')
-
+print(f"Grupo de seguridad '{SECURITY_GROUP_BACKEND}' creado")
 # NFS
 create_security_group(SECURITY_GROUP_NFS, "Reglas para el nfs")
 authorize_ingress(SECURITY_GROUP_NFS, 'tcp', 22, '0.0.0.0/0')
 authorize_ingress(SECURITY_GROUP_NFS, 'tcp', 2049, '0.0.0.0/0')
-
+print(f"Grupo de seguridad '{SECURITY_GROUP_NFS}' creado")
 # Balanceador
 create_security_group(SECURITY_GROUP_BALANCEADOR, "Reglas para el balanceador")
 authorize_ingress(SECURITY_GROUP_BALANCEADOR, 'tcp', 22, '0.0.0.0/0')
 authorize_ingress(SECURITY_GROUP_BALANCEADOR, 'tcp', 80, '0.0.0.0/0')
 authorize_ingress(SECURITY_GROUP_BALANCEADOR, 'tcp', 443, '0.0.0.0/0')
+print(f"Grupo de seguridad '{SECURITY_GROUP_BALANCEADOR}' creado")
+print("Todos los grupos de seguridad han sido creados")

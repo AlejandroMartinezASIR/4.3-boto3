@@ -39,15 +39,17 @@ def run_instance(image_id, count, instance_type, key_name, security_group, insta
 
 # Frontend 1
 run_instance(AMI_ID, COUNT, INSTANCE_TYPE, KEY_NAME, SECURITY_GROUP_FRONTEND, INSTANCE_NAME_FRONTEND)
-
+print(f"Instancia EC2 '{INSTANCE_NAME_FRONTEND}' creada")
 # Frontend 2
 run_instance(AMI_ID, COUNT, INSTANCE_TYPE, KEY_NAME, SECURITY_GROUP_FRONTEND, INSTANCE_NAME_FRONTEND)
-
+print
 # Backend
 run_instance(AMI_ID, COUNT, INSTANCE_TYPE, KEY_NAME, SECURITY_GROUP_BACKEND, INSTANCE_NAME_BACKEND)
-
+print(f"Instancia EC2 '{INSTANCE_NAME_BACKEND}' creada")
 # NFS
 run_instance(AMI_ID, COUNT, INSTANCE_TYPE, KEY_NAME, SECURITY_GROUP_NFS, INSTANCE_NAME_NFS)
-
+print(f"Instancia EC2 '{INSTANCE_NAME_NFS}' creada")
 # Balanceador
 run_instance(AMI_ID, COUNT, INSTANCE_TYPE, KEY_NAME, SECURITY_GROUP_BALANCEADOR, INSTANCE_NAME_BALANCEADOR)
+print(f"Instancia EC2 '{INSTANCE_NAME_BALANCEADOR}' creada")
+print("Todas las instancias han sido creadas")

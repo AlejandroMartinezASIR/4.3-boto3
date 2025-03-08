@@ -39,3 +39,18 @@ Este script utiliza **boto3** para realizar las siguientes acciones:
 - **`ec2.describe_instances`**: Describe las instancias para obtener la ID de la instancia.
 - **`ec2.allocate_address`**: Asigna una nueva dirección IP elástica.
 - **`ec2.associate_address`**: Asocia la dirección IP elástica con la instancia especificada.
+
+# Imagenes
+
+## Ejercicio
+![](images/4.3.8.PNG)
+![](images/4.3.9.PNG)
+## Grupos de seguridad
+![](images/4.3.2.PNG)
+![](images/4.3.4.PNG)
+## Instancias
+![](images/4.3.3.PNG)
+![](images/4.3.5.PNG)
+## IP elastica asociada a balanceador
+![](images/4.3.6.PNG)
+![](images/4.3.7.PNG)

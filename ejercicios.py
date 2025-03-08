@@ -5,7 +5,7 @@ ec2 = boto3.client('ec2')
 
 # Crear el grupo de seguridad
 response = ec2.create_security_group(
-    GroupName='backend-sg',
+    GroupName='Grupo-ejercicio',
     Description='Grupo de seguridad para backend'
 )
 security_group_id = response['GroupId']
@@ -29,7 +29,7 @@ ec2.authorize_security_group_ingress(
     ]
 )
 
-print(f"Grupo de seguridad 'backend-sg' creado con ID: {security_group_id}")
+print(f"Grupo de seguridad 'Grupo-ejercicio' creado con ID: {security_group_id}")
 
 # Ejercicio 2: Crear una instancia EC2
 response = ec2.run_instances(
@@ -45,7 +45,7 @@ response = ec2.run_instances(
             'Tags': [
                 {
                     'Key': 'Name',
-                    'Value': 'backend'
+                    'Value': 'Instancia-ejercicio'
                 }
             ]
         }
@@ -53,4 +53,4 @@ response = ec2.run_instances(
 )
 
 instance_id = response['Instances'][0]['InstanceId']
-print(f"Instancia EC2 'backend' creada con ID: {instance_id}")
+print(f"Instancia EC2 'Instancia-ejercicio' creada con ID: {instance_id}")
